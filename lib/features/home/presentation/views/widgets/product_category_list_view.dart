@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:otex_app_task/core/utils/assets.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/product_category_item.dart';
 
@@ -9,7 +10,8 @@ class ProductCategoryListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: 80.h,
       child: Padding(
         padding: const EdgeInsets.only(right: 16,left: 4),
         child: ListView.builder(
