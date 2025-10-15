@@ -1,17 +1,10 @@
-# otex_app_task
+# 🧭 Otex App
 
-A new Flutter project.
+> **Otex App** is a task project developed for **IT Legend**, showcasing clean architecture, MVVM pattern, and local data handling in Flutter.
 
-## Getting Started
+## 🚀 Technical Overview
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# OtexAppTask-Khaled-Khalifa-
+- 🧱 **Architecture:** Implemented **MVVM** pattern with some **Clean Architecture** principles for better scalability and maintainability.
+- 🧭 **State Management:** Used **Cubit** (`flutter_bloc`) for predictable and structured state management.
+- 🗄️ **Local Database:** Utilized **SQL local database** for offline data storage.
+- 🧰 **Modular Structure:** Project organized into `core` and `features` for better code separation.
