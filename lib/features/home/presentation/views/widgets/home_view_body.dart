@@ -6,6 +6,7 @@ import 'package:otex_app_task/features/home/presentation/views/widgets/custom_ho
 import 'package:otex_app_task/features/home/presentation/views/widgets/free_shipping_item.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/product_card.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/product_category_list_view.dart';
+import 'package:otex_app_task/features/home/presentation/views/widgets/products_grid_view.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -26,32 +27,34 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const CustomHomeHeader(),
-        CustomHomeChipChoice(
-            categories: categories,
-            tag: tag,
-            onChanged:     (val) {
-              setState(() {
-                tag = val;
-              });
-            },
-        ),
-        const SizedBox(height: 32),
-        const ProductCategoryListView(),
-        const SizedBox(height: 32),
-        isFreeShipping == true
-            ? Column(
-              children: [
-                const FreeShippingItem(),
-                const SizedBox(height: 20),
-              ],
-            )
-            : const SizedBox(),
-
-       ProductCard()
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const CustomHomeHeader(),
+          CustomHomeChipChoice(
+              categories: categories,
+              tag: tag,
+              onChanged:     (val) {
+                setState(() {
+                  tag = val;
+                });
+              },
+          ),
+          const SizedBox(height: 32),
+          const ProductCategoryListView(),
+          const SizedBox(height: 32),
+          isFreeShipping == true
+              ? Column(
+                children: [
+                  const FreeShippingItem(),
+                  const SizedBox(height: 20),
+                ],
+              )
+              : const SizedBox(),
+      
+         const ProductsGridView()
+        ],
+      ),
     );
   }
 }
