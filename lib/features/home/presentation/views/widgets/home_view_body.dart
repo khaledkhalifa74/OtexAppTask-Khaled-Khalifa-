@@ -32,27 +32,27 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         children: [
           const CustomHomeHeader(),
           CustomHomeChipChoice(
-              categories: categories,
-              tag: tag,
-              onChanged:     (val) {
-                setState(() {
-                  tag = val;
-                });
-              },
+            categories: categories,
+            tag: tag,
+            onChanged:     (val) {
+              setState(() {
+                tag = val;
+              });
+            },
           ),
           const SizedBox(height: 32),
           const ProductCategoryListView(),
           const SizedBox(height: 32),
           isFreeShipping == true
               ? Column(
-                children: [
-                  const FreeShippingItem(),
-                  const SizedBox(height: 20),
-                ],
-              )
+            children: [
+              const FreeShippingItem(),
+              const SizedBox(height: 20),
+            ],
+          )
               : const SizedBox(),
-      
-         const ProductsGridView()
+
+          const ProductsGridView(),
         ],
       ),
     );
