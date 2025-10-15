@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:otex_app_task/core/utils/colors.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/custom_home_chip_choice.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/custom_home_header.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/free_shipping_item.dart';
-import 'package:otex_app_task/features/home/presentation/views/widgets/product_card.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/product_category_list_view.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/products_grid_view.dart';
 

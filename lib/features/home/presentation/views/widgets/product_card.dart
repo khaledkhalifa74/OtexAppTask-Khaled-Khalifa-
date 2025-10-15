@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:otex_app_task/core/utils/assets.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/image_product.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/product_footer_icons.dart';
