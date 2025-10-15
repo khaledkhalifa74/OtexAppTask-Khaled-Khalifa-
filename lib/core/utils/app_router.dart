@@ -5,6 +5,7 @@ abstract class AppRouter {
   static const kHomeView = '/homeView';
 
   static final router = GoRouter(
+    initialLocation: kHomeView,
     routes: [
       GoRoute(
         path: kHomeView,
