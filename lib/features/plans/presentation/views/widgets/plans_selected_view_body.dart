@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:otex_app_task/core/utils/colors.dart';
 import 'package:otex_app_task/core/widgets/custom_button.dart';
 import 'package:otex_app_task/features/plans/presentation/views/widgets/custom_plans_header.dart';
 import 'package:otex_app_task/features/plans/presentation/views/widgets/plan_item.dart';
@@ -25,15 +24,22 @@ class _PlansSelectedViewBodyState extends State<PlansSelectedViewBody> {
           const CustomPlansHeader(),
           const SizedBox(height: 32),
           PlanItem(
+            isHealthPin: true,
+            numberOfDaysMoveUp: 3,
+            numberOfAdValidity: 30,
+            isGlobal: true,
+            isPremium: true,
             planName: 'بلس',
             checkBoxValue: planCheckBoxValue,
             onChanged: (newValue){
               setState(() {
                 planCheckBoxValue = newValue!;
               });
-            }, planPrice: '3,000',
+            },
+            planPrice: '3,000',
           ),
           const SizedBox(height: 32),
+          const Spacer(),
           Container(
             padding: EdgeInsets.only(top: 12),
             decoration: customButtonDecoration(),
@@ -45,13 +51,5 @@ class _PlansSelectedViewBodyState extends State<PlansSelectedViewBody> {
         ],
       ),
     );
-  }
-
-  BoxDecoration customButtonDecoration() {
-    return BoxDecoration(
-            border: Border(
-              top: BorderSide(color: kBorderColor)
-            ),
-          );
   }
 }

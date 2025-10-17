@@ -18,9 +18,13 @@ class CustomPlansHeader extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(
-                  Icons.keyboard_arrow_right_rounded,
-                  color: kPrimaryColor,
+                SizedBox(
+                  width: 20,
+                  child: Icon(
+                    Icons.keyboard_arrow_right_rounded,
+                    color: kPrimaryColor,
+                    size: 28,
+                  ),
                 ),
                 const SizedBox(width: 12),
                 Text(

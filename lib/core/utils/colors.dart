@@ -13,4 +13,5 @@ const kItemsColor = Color(0xff3B4CF2);
 const kMidNavBarColor = Color(0xff0062E2);
 const kGreyColor = Color(0xffe5e5e5);
 const kShadowColor = Color(0xff0F1F0A);
+const kFlagBG = Color(0xFFFFE0E0);
 const kWhiteColor = Colors.white;
