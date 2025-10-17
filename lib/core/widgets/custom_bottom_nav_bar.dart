@@ -32,6 +32,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   }
   void _myProfileClicked() {
     if (widget.activeIndex != 4) {
+      context.push(AppRouter.kPlansView);
     }
   }
   @override
