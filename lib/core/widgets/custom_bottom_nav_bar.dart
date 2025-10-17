@@ -37,7 +37,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 105,
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: Container(

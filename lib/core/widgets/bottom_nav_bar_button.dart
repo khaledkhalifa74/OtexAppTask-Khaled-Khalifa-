@@ -11,11 +11,13 @@ class BottomNavbarButton extends StatelessWidget {
     this.isActive,
     this.buttonColor,
   });
+
   final IconData icon;
   final String text;
   final VoidCallback action;
   final bool? isActive;
   final Color? buttonColor;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -28,20 +30,36 @@ class BottomNavbarButton extends StatelessWidget {
           Icon(
             icon,
             size: 24,
-            color: buttonColor ?? (isActive == true
-                ? kPrimaryColor
-                : kHintTextColor),
+            color:
+                buttonColor ??
+                (isActive == true ? kPrimaryColor : kHintTextColor),
           ),
           Text(
             text,
             textAlign: TextAlign.center,
             style: Styles.textStyle12.copyWith(
               fontWeight: FontWeight.w600,
-              color: buttonColor ?? (isActive == true
-                  ? kPrimaryColor
-                  : kHintTextColor),
+              color:
+                  buttonColor ??
+                  (isActive == true ? kPrimaryColor : kHintTextColor),
             ),
           ),
+          isActive == true
+              ? Container(
+                width: 55,
+                height: 6,
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(color: kPrimaryColor, width: 1),
+                  ),
+                  color: Colors.transparent,
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                ),
+              )
+              : const SizedBox(),
         ],
       ),
     );

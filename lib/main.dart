@@ -34,6 +34,9 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           locale: Locale('ar'),
           theme: ThemeData.dark().copyWith(
+            bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              backgroundColor: Colors.white,
+            ),
             scaffoldBackgroundColor: kPrimaryColor,
             textTheme: GoogleFonts.tajawalTextTheme(),
           ),
