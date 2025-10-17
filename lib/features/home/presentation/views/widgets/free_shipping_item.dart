@@ -24,14 +24,14 @@ class FreeShippingItem extends StatelessWidget {
           children: [
             Icon(
               Icons.check_rounded,
-              color: kSuccessColor,
+              color: kGreenColor,
               weight: 80,
             ),
             const SizedBox(width: 4),
             Text(
               'شحن مجاني',
               style: Styles.textStyle14.copyWith(
-                color: kSuccessColor,
+                color: kGreenColor,
               ),
             ),
             const Spacer(),
