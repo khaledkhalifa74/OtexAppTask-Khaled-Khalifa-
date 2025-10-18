@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otex_app_task/core/widgets/custom_button.dart';
+import 'package:otex_app_task/features/plans/presentation/views/widgets/contact_us_item.dart';
 import 'package:otex_app_task/features/plans/presentation/views/widgets/custom_plans_header.dart';
 import 'package:otex_app_task/features/plans/presentation/views/widgets/plan_item.dart';
 
@@ -38,7 +39,7 @@ class _PlansSelectedViewBodyState extends State<PlansSelectedViewBody> {
             },
             planPrice: '3,000',
           ),
-          const SizedBox(height: 32),
+          const ContactUsItem(),
           const Spacer(),
           Container(
             padding: EdgeInsets.only(top: 12),

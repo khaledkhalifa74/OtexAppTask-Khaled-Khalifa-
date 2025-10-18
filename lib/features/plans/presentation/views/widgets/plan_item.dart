@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otex_app_task/core/utils/assets.dart';
 import 'package:otex_app_task/core/utils/colors.dart';
-import 'package:otex_app_task/core/utils/styles.dart';
 import 'package:otex_app_task/features/plans/presentation/views/widgets/custom_plan_flag.dart';
 import 'package:otex_app_task/features/plans/presentation/views/widgets/custom_plan_row.dart';
 import 'package:otex_app_task/features/plans/presentation/views/widgets/plan_info.dart';
@@ -86,7 +85,7 @@ class PlanItem extends StatelessWidget {
                     ],
                   ),
                 ),
-                ViewsNumberBadge()
+                const ViewsNumberBadge(numberOfViews: '24',)
               ],
             ),
           ),

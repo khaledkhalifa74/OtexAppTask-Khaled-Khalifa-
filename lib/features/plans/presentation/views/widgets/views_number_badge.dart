@@ -3,7 +3,8 @@ import 'package:otex_app_task/core/utils/colors.dart';
 import 'package:otex_app_task/core/utils/styles.dart';
 
 class ViewsNumberBadge extends StatelessWidget {
-  const ViewsNumberBadge({super.key});
+  final String? numberOfViews;
+  const ViewsNumberBadge({super.key, this.numberOfViews});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class ViewsNumberBadge extends StatelessWidget {
           ),
           alignment: Alignment.center,
           child: Text(
-            '24',
+            numberOfViews ?? '0',
             style: Styles.textStyle16.copyWith(
               fontWeight: FontWeight.bold,
               color: kGreenColor
