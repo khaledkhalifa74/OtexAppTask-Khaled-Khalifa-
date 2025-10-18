@@ -35,7 +35,9 @@ class CustomPlansHeader extends StatelessWidget {
                 const SizedBox(width: 12),
                 Text(
                   'أختر الباقات اللى تناسبك',
-                  style: Styles.textStyle24,
+                  style: Styles.textStyle24.copyWith(
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
               ],
             ),
