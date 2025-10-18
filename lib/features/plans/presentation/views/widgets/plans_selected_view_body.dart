@@ -16,8 +16,9 @@ class _PlansSelectedViewBodyState extends State<PlansSelectedViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 32,
+      padding: const EdgeInsets.only(
+        top: 32,
+        bottom: 55,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
