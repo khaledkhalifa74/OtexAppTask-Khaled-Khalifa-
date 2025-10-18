@@ -1,15 +1,18 @@
-import 'package:flutter/material.dart';
-import 'package:otex_app_task/core/utils/colors.dart';
-import 'package:otex_app_task/features/Home/presentation/views/widgets/home_view_body.dart';
+  import 'package:flutter/material.dart';
+  import 'package:otex_app_task/core/utils/colors.dart';
+  import 'package:otex_app_task/core/widgets/custom_bottom_nav_bar.dart';
+  import 'package:otex_app_task/features/home/presentation/views/widgets/home_view_body.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  class HomeView extends StatelessWidget {
+    const HomeView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kWhiteColor,
-      body: HomeViewBody(),
-    );
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        backgroundColor: kWhiteColor,
+        bottomNavigationBar: CustomBottomNavBar(activeIndex: 0),
+        resizeToAvoidBottomInset: true,
+        body: HomeViewBody(),
+      );
+    }
   }
-}
