@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:otex_app_task/core/utils/app_router.dart';
 import 'package:otex_app_task/core/utils/colors.dart';
 import 'package:otex_app_task/core/utils/styles.dart';
 
@@ -25,7 +27,9 @@ class CustomHomeHeader extends StatelessWidget {
                 const Spacer(),
                 InkWell(
                   borderRadius: BorderRadius.circular(4),
-                  onTap: (){},
+                  onTap: (){
+                    context.push(AppRouter.kFilteringView);
+                  },
                   child: Row(
                     children: [
                       Text(
