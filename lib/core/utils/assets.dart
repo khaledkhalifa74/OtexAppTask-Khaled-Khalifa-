@@ -1,7 +1,7 @@
 class AssetsData{
   static const watchItem = 'assets/images/watch.png';
   static const phoneItem = 'assets/images/phones.png';
-  static const beautyProductsItem = 'assets/images/beauty_products.png.png';
+  static const beautyProductsItem = 'assets/images/beauty_products.png';
   static const shoesCategoryItem = 'assets/images/shoes_category.png';
   static const shirtItem = 'assets/images/shirt.png';
   static const sweatshirtItem = 'assets/images/sweatshirt.png';

@@ -6,8 +6,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:otex_app_task/core/utils/app_router.dart';
 import 'package:otex_app_task/core/utils/colors.dart';
 import 'package:otex_app_task/core/utils/simple_bloc_observer.dart';
+import 'package:otex_app_task/features/home/data/database/home_db_service.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = SimpleBlocObserver();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
@@ -15,6 +17,8 @@ void main() {
     systemNavigationBarColor: kWhiteColor,
     systemNavigationBarIconBrightness: Brightness.dark,
   ));
+  await HomeDbService().createTables();
+  // await PlansDbService().createTables();
   runApp(const MyApp());
 }
 

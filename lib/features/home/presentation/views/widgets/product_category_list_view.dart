@@ -17,7 +17,7 @@ class ProductCategoryListView extends StatelessWidget {
         padding: const EdgeInsets.only(right: 16,left: 4),
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: 10,
+          itemCount: homeCubit.productsCategory.length,
           itemBuilder: (context,index){
             return Padding(
               padding: const EdgeInsets.only(
