@@ -39,7 +39,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 },
               ),
               const SizedBox(height: 32),
-              const ProductCategoryListView(),
+              ProductCategoryListView(homeCubit: cubit),
               const SizedBox(height: 32),
               cubit.isFreeShipping == true
                   ? Column(

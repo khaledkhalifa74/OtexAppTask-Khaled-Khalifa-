@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otex_app_task/core/utils/assets.dart';
+import 'package:otex_app_task/features/home/data/models/product_category_model.dart';
 import 'package:otex_app_task/features/home/data/models/product_model.dart';
 import 'package:otex_app_task/features/home/domain/repos/home_repo.dart';
 import 'package:otex_app_task/features/home/presentation/manager/home_cubit/home_state.dart';
@@ -21,6 +22,7 @@ class HomeCubit extends Cubit<HomeState> {
     'منتجات تجميل',
   ];
   List<ProductModel> products = [];
+  List<ProductCategoryModel> productsCategory = [];
   void updateCategory(int value){
     if (categoryTag != value) {
       categoryTag = value;
@@ -79,6 +81,33 @@ class HomeCubit extends Cubit<HomeState> {
           ]
         );
       }
+      final savedProductsCategory = await homeRepo.getProductsCategory();
+      if(savedProductsCategory.isEmpty){
+        await homeRepo.insertProductsCategory(
+            [
+              ProductCategoryModel(
+                  id: 1,
+                  name: 'ساعات',
+                  imageUrl: AssetsData.watchItem,
+              ),
+              ProductCategoryModel(
+                  id: 2,
+                  name: 'أحذية',
+                  imageUrl: AssetsData.shoesCategoryItem,
+              ),
+              ProductCategoryModel(
+                id: 3,
+                name: 'موبايلات',
+                imageUrl: AssetsData.phoneItem,
+              ),
+              ProductCategoryModel(
+                id: 4,
+                name: 'منتجات تجميل',
+                imageUrl: AssetsData.beautyProductsItem,
+              ),
+            ]
+        );
+      }
       emit(StopSaveDataState());
       emit(SaveDataSuccessState());
     } on Exception {
@@ -95,6 +124,8 @@ class HomeCubit extends Cubit<HomeState> {
       categories = savedCategories;
       final savedProducts = await homeRepo.getProducts();
       products = savedProducts;
+      final savedProductsCategory = await homeRepo.getProductsCategory();
+      productsCategory = savedProductsCategory;
       emit(StopLoadDataFromDBState());
       emit(LoadDataFromDBSuccessState());
     } on Exception {

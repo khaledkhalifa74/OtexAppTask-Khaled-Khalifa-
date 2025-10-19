@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:otex_app_task/core/utils/assets.dart';
+import 'package:otex_app_task/features/home/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/product_category_item.dart';
 
 class ProductCategoryListView extends StatelessWidget {
+  final HomeCubit homeCubit;
   const ProductCategoryListView({
-    super.key,
+    super.key, required this.homeCubit,
   });
 
   @override
@@ -23,8 +24,8 @@ class ProductCategoryListView extends StatelessWidget {
                 left: 12,
               ),
               child: ProductCategoryItem(
-                image: AssetsData.watchItem,
-                title: 'ساعات',
+                image: homeCubit.productsCategory[index].imageUrl!,
+                title: homeCubit.productsCategory[index].name,
               ),
             );
           },

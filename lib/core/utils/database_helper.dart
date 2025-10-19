@@ -32,6 +32,13 @@ class DatabaseHelper {
       name TEXT NOT NULL
     )
     ''');
+    await db.execute('''
+    CREATE TABLE product_category(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      imageUrl TEXT,
+    )
+    ''');
 
     // Table for products
     await db.execute('''
