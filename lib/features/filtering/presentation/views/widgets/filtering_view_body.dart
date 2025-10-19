@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otex_app_task/core/utils/colors.dart';
+import 'package:otex_app_task/core/widgets/custom_filtering_chip_choice.dart';
 import 'package:otex_app_task/features/filtering/presentation/views/widgets/category_item.dart';
 import 'package:otex_app_task/features/filtering/presentation/views/widgets/custom_filtering_header.dart';
 import 'package:otex_app_task/features/filtering/presentation/views/widgets/location_item.dart';
@@ -13,6 +14,22 @@ class FilteringViewBody extends StatefulWidget {
 }
 
 class _FilteringViewBodyState extends State<FilteringViewBody> {
+  int firstChipTag = 0;
+  int secondChipTag = 0;
+  List<String> types = [
+    'الكل',
+    'تاون هاوس',
+    'فيلا منفصلة',
+    'شقة'
+  ];
+  List<String> typesOfRooms = [
+    'الكل',
+    'غرفة',
+    'غرفتين',
+    '3 غرف',
+    '4 غرف',
+    '5 غرف+'
+  ];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,6 +56,29 @@ class _FilteringViewBodyState extends State<FilteringViewBody> {
               height: 0,
             ),
             const MonthlyInstallmentsItem(),
+            CustomFilteringChipChoice(
+              types: types,
+              tag: firstChipTag,
+              onChanged: (newValue) {
+                setState(() {
+                  firstChipTag = newValue;
+                });
+              },
+              text: 'النوع',
+
+            ),
+            const SizedBox(height: 20),
+            CustomFilteringChipChoice(
+              types: typesOfRooms,
+              tag: secondChipTag,
+              onChanged: (newValue) {
+                setState(() {
+                  secondChipTag = newValue;
+                });
+              },
+              text: 'عدد الغرف',
+
+            ),
           ],
         ),
       ),

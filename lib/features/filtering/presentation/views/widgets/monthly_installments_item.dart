@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otex_app_task/core/utils/colors.dart';
 import 'package:otex_app_task/core/utils/styles.dart';
+import 'package:otex_app_task/core/widgets/custom_text_form_field.dart';
 
 class MonthlyInstallmentsItem extends StatelessWidget {
   const MonthlyInstallmentsItem({super.key});
@@ -21,33 +22,9 @@ class MonthlyInstallmentsItem extends StatelessWidget {
           const SizedBox(height: 12),
           Row(
             children: [
-              Expanded(
-                child: Container(
-                  height: 48,
-                  decoration: ShapeDecoration(
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: kBorderColor,
-                        ),
-                        borderRadius: BorderRadius.circular(8)
-                      ),
-                  ),
-                ),
-              ),
+              Expanded(child: CustomTextFormField()),
               const SizedBox(width: 12),
-              Expanded(
-                child: Container(
-                  height: 48,
-                  decoration: ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: kBorderColor,
-                        ),
-                        borderRadius: BorderRadius.circular(8)
-                    ),
-                  ),
-                ),
-              ),
+              Expanded(child: CustomTextFormField()),
             ],
           ),
         ],
