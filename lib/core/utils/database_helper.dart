@@ -41,11 +41,11 @@ class DatabaseHelper {
       imageUrl TEXT,
       price REAL,
       oldPrice REAL,
+      salesNumber TEXT NOT NULL,
       isFavorite INTEGER DEFAULT 0
     )
     ''');
 
-    // You can also add another table for subcategories if needed
   }
 
   Future close() async {

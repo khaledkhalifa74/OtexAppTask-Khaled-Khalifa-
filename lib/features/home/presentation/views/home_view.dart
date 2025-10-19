@@ -12,7 +12,7 @@ import 'package:otex_app_task/features/home/presentation/manager/home_cubit/home
     @override
     Widget build(BuildContext context) {
       return BlocProvider(
-        create: (BuildContext context) => HomeCubit(HomeRepoImpl())..saveAndLoadCategories(),
+        create: (BuildContext context) => HomeCubit(HomeRepoImpl())..saveAndLoadHomeData(),
         child: Scaffold(
           backgroundColor: kWhiteColor,
           bottomNavigationBar: CustomBottomNavBar(activeIndex: 0),

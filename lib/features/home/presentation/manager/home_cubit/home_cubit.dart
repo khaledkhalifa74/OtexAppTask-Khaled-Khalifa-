@@ -1,4 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:otex_app_task/core/utils/assets.dart';
+import 'package:otex_app_task/features/home/data/models/product_model.dart';
 import 'package:otex_app_task/features/home/domain/repos/home_repo.dart';
 import 'package:otex_app_task/features/home/presentation/manager/home_cubit/home_state.dart';
 
@@ -18,6 +20,7 @@ class HomeCubit extends Cubit<HomeState> {
     'الكترونيات',
     'منتجات تجميل',
   ];
+  List<ProductModel> products = [];
   void updateCategory(int value){
     if (categoryTag != value) {
       categoryTag = value;
@@ -26,21 +29,82 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
 
-  Future<void> saveCategoriesToDB() async {
-    final savedCategories = await homeRepo.getCategories();
-    if(savedCategories.isEmpty){
-      await homeRepo.insertCategories(categories);
+  Future<void> saveHomeDataToDB() async {
+    try {
+      emit(StartSaveDataState());
+      final savedCategories = await homeRepo.getCategories();
+      if(savedCategories.isEmpty){
+        await homeRepo.insertCategories(categories);
+      }
+      final savedProducts = await homeRepo.getProducts();
+      if(savedProducts.isEmpty){
+        await homeRepo.insertProducts(
+          [
+            ProductModel(
+              id: 1,
+                name: 'جاكيت من الصوف مناسب',
+                price: 3000,
+                oldPrice: 5000,
+                imageUrl: AssetsData.sweatshirtItem,
+                isFavorite: true,
+                salesNumber: '3.3k'
+            ),
+            ProductModel(
+              id: 2,
+              name: 'قميص مميز',
+              price: 600,
+              oldPrice: 1000,
+              imageUrl: AssetsData.shirtItem,
+              isFavorite: false,
+              salesNumber: '2k'
+            ),
+            ProductModel(
+              id: 3,
+              name: 'حذاء رياضي',
+              price: 1200,
+              oldPrice: 1500,
+              imageUrl: AssetsData.shoesItem,
+              isFavorite: false,
+              salesNumber: '4k',
+            ),
+            ProductModel(
+              id: 4,
+              name: 'هودي بقصة مميزة',
+              price: 2500,
+              oldPrice: 4000,
+              imageUrl: AssetsData.sweatshirtItem,
+              isFavorite: false,
+              salesNumber: '1.5l'
+            ),
+          ]
+        );
+      }
+      emit(StopSaveDataState());
+      emit(SaveDataSuccessState());
+    } on Exception {
+      emit(StopSaveDataState());
+      emit(SaveDataFailureState());
     }
   }
 
-  Future<void> loadCategoriesFromDB() async {
-    final savedCategories = await homeRepo.getCategories();
-    categories = savedCategories;
-    emit(LoadCategoriesSuccessfully(categories));
+  Future<void> loadHomeDataFromDB() async {
+
+    try {
+      emit(StartLoadDataFromDBState());
+      final savedCategories = await homeRepo.getCategories();
+      categories = savedCategories;
+      final savedProducts = await homeRepo.getProducts();
+      products = savedProducts;
+      emit(StopLoadDataFromDBState());
+      emit(LoadDataFromDBSuccessState());
+    } on Exception {
+      emit(StopLoadDataFromDBState());
+      emit(LoadDataFromDBFailureState());
+    }
   }
 
-  Future<void> saveAndLoadCategories()async{
-    await saveCategoriesToDB();
-    await loadCategoriesFromDB();
+  Future<void> saveAndLoadHomeData()async{
+    await saveHomeDataToDB();
+    await loadHomeDataFromDB();
   }
 }

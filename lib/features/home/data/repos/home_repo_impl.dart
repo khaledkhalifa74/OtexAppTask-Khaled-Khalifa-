@@ -13,7 +13,6 @@ class HomeRepoImpl extends HomeRepo{
       batch.insert('categories', {'name': c});
     }
     await batch.commit(noResult: true);
-    throw UnimplementedError();
   }
 
   @override

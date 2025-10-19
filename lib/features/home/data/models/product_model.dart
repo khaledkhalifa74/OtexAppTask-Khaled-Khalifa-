@@ -4,7 +4,7 @@ class ProductModel {
   String? imageUrl;
   double price;
   double? oldPrice;
-  double? salesNumber;
+  String? salesNumber;
   bool isFavorite;
 
   ProductModel({
@@ -13,6 +13,7 @@ class ProductModel {
     this.imageUrl,
     required this.price,
     this.oldPrice,
+    this.salesNumber,
     this.isFavorite = false,
   });
 
@@ -23,6 +24,7 @@ class ProductModel {
       'imageUrl': imageUrl,
       'price': price,
       'oldPrice': oldPrice,
+      'salesNumber' : salesNumber,
       'isFavorite': isFavorite ? 1 : 0,
     };
   }
@@ -34,6 +36,7 @@ class ProductModel {
       imageUrl: map['imageUrl'],
       price: map['price'],
       oldPrice: map['oldPrice'],
+      salesNumber: map['salesNumber'],
       isFavorite: map['isFavorite'] == 1,
     );
   }

@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:otex_app_task/core/utils/assets.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/image_product.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/product_footer_icons.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/product_info.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final String image;
+  final String productName;
+  final String currentPrice;
+  final String previousPrice;
+  final String salesNumber;
+  final bool isFavourite;
+  const ProductCard({super.key, required this.productName, required this.currentPrice, required this.previousPrice, required this.salesNumber, required this.isFavourite, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +26,14 @@ class ProductCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ImageProduct(
-                image: AssetsData.shirtItem,
+                image: image,
             ),
             ProductInfo(
-              productName: 'جاكيت من الصوف مصنوع من اجود انواع الصوف المصري',
-              currentPrice: '3,000 جم',
-              previousPrice: '5,000 جم',
-              salesNumber: '3.3k+',
+              productName: productName,
+              currentPrice: '$currentPrice جم',
+              previousPrice: '$previousPrice جم',
+              salesNumber: '$salesNumber+',
+              isFavourite: isFavourite,
             ),
             ProductFooterIcons(),
           ],
