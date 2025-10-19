@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:otex_app_task/core/utils/colors.dart';
 import 'package:otex_app_task/features/home/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:otex_app_task/features/home/presentation/manager/home_cubit/home_state.dart';
 import 'package:otex_app_task/features/home/presentation/views/widgets/custom_home_chip_choice.dart';
@@ -22,7 +23,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return BlocBuilder<HomeCubit,HomeState>(
       builder: (BuildContext context, state) {
         final cubit = HomeCubit.get(context);
-        return SingleChildScrollView(
+        return state is StartSaveDataState || state is StartLoadDataFromDBState
+        ? Center(child: CircularProgressIndicator(
+          color: kPrimaryColor,
+        ))
+        : SingleChildScrollView(
           child: Column(
             children: [
               const CustomHomeHeader(),
@@ -34,7 +39,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 },
               ),
               const SizedBox(height: 32),
-              const ProductCategoryListView(),
+              ProductCategoryListView(homeCubit: cubit),
               const SizedBox(height: 32),
               cubit.isFreeShipping == true
                   ? Column(
@@ -45,7 +50,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               )
                   : const SizedBox(),
 
-              const ProductsGridView(),
+              ProductsGridView(homeCubit: cubit),
             ],
           ),
         );

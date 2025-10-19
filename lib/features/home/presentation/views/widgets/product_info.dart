@@ -8,7 +8,8 @@ class ProductInfo extends StatelessWidget {
   final String currentPrice;
   final String previousPrice;
   final String salesNumber;
-  const ProductInfo({super.key, required this.productName, required this.currentPrice, required this.previousPrice, required this.salesNumber});
+  final bool isFavourite;
+  const ProductInfo({super.key, required this.productName, required this.currentPrice, required this.previousPrice, required this.salesNumber, required this.isFavourite});
 
   @override
   Widget build(BuildContext context) {
@@ -74,8 +75,8 @@ class ProductInfo extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              const Icon(
-                Icons.favorite_border,
+              Icon(
+                isFavourite == true ? Icons.favorite : Icons.favorite_border,
                 weight: 40,
                 color: kPrimaryColor,
               ),
