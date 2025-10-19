@@ -19,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
           hintText: hintText,
           hintStyle: Styles.textStyle14.copyWith(
             color: kHintTextColor,
+            fontWeight: FontWeight.bold,
           ),
           focusedBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(12)),
