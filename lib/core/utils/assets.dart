@@ -9,4 +9,6 @@ class AssetsData{
   static const premiumIcon = 'assets/images/premium.svg';
   static const globalIcon = 'assets/images/global.svg';
   static const acuteIcon = 'assets/images/acute.svg';
+  static const realStateIcon = 'assets/images/real_state.svg';
+  static const locationIcon = 'assets/images/location.svg';
 }

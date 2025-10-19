@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otex_app_task/core/utils/colors.dart';
 import 'package:otex_app_task/core/utils/styles.dart';
 
@@ -18,18 +19,25 @@ class CustomPlansHeader extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 20,
-                  child: Icon(
-                    Icons.keyboard_arrow_right_rounded,
-                    color: kPrimaryColor,
-                    size: 28,
+                GestureDetector(
+                  onTap: (){
+                    context.pop();
+                  },
+                  child: SizedBox(
+                    width: 20,
+                    child: Icon(
+                      Icons.keyboard_arrow_right_rounded,
+                      color: kPrimaryColor,
+                      size: 28,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 12),
                 Text(
                   'أختر الباقات اللى تناسبك',
-                  style: Styles.textStyle24,
+                  style: Styles.textStyle24.copyWith(
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
               ],
             ),

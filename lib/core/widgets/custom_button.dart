@@ -14,7 +14,7 @@ const CustomButton({super.key, required this.text, required this.onPressed, this
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: SizedBox(
-        height: 50,
+        height: 52,
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor: WidgetStatePropertyAll(backgroundColor ?? kSecondaryColor)
