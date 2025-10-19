@@ -6,3 +6,7 @@ class UpdateHomeCategory extends HomeState {
   int? categoryTag;
   UpdateHomeCategory(this.categoryTag);
 }
+class LoadCategoriesSuccessfully extends HomeState {
+  List<String> categories;
+  LoadCategoriesSuccessfully(this.categories);
+}
