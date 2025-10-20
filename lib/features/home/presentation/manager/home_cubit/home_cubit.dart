@@ -97,7 +97,7 @@ class HomeCubit extends Cubit<HomeState> {
               ),
               ProductCategoryModel(
                 id: 3,
-                name: 'موupبايلات',
+                name: 'موبايلات',
                 imageUrl: AssetsData.phoneItem,
               ),
               ProductCategoryModel(
