@@ -137,8 +137,12 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> saveAndLoadHomeData()async{
     await saveHomeDataToDB();
     await loadHomeDataFromDB();
-    // final dbPath = await getDatabasesPath();
-    // final path = join(dbPath, 'offers_app.db');
-    // await deleteDatabase(path);
   }
+
+  // Future<void> deleteDB()async{
+  //   final dbPath = await getDatabasesPath();
+  //   final path = join(dbPath, 'otex_app.db');
+  //   await deleteDatabase(path);
+  // }
+
 }

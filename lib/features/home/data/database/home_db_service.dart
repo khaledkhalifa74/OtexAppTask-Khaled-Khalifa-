@@ -1,4 +1,3 @@
-// lib/features/home/data/home_db_service.dart
 import 'package:otex_app_task/core/utils/database_helper.dart';
 
 class HomeDbService {
