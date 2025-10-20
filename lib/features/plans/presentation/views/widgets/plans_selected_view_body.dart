@@ -40,7 +40,7 @@ class _PlansSelectedViewBodyState extends State<PlansSelectedViewBody> {
           ),
           containersColor: kWhiteColor,
           child: ListView(
-            padding: const EdgeInsets.only(top: 32, bottom: 55),
+            padding: const EdgeInsets.only(bottom: 55),
             children: [
               const CustomPlansHeader(),
               const SizedBox(height: 32),

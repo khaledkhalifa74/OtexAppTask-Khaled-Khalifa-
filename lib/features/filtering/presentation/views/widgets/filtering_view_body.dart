@@ -27,7 +27,6 @@ class _FilteringViewBodyState extends State<FilteringViewBody> {
         return SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(
-              top: 32,
               bottom: 55,
             ),
             child: Directionality(
