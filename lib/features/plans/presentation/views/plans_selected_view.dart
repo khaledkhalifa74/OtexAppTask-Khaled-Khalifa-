@@ -15,7 +15,7 @@ class PlansSelectedView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: kWhiteColor,
         resizeToAvoidBottomInset: true,
-        body: PlansSelectedViewBody(),
+        body: SafeArea(child: PlansSelectedViewBody()),
       ),
     );
   }

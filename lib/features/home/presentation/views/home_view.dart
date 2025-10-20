@@ -17,7 +17,7 @@ import 'package:otex_app_task/features/home/presentation/manager/home_cubit/home
           backgroundColor: kWhiteColor,
           bottomNavigationBar: CustomBottomNavBar(activeIndex: 0),
           resizeToAvoidBottomInset: true,
-          body: HomeViewBody(),
+          body: SafeArea(child: HomeViewBody()),
         ),
       );
     }

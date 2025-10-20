@@ -14,7 +14,7 @@ class FilteringView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: kWhiteColor,
         resizeToAvoidBottomInset: true,
-        body: FilteringViewBody(),
+        body: SafeArea(child: FilteringViewBody()),
       ),
     );
   }
