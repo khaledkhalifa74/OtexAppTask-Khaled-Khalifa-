@@ -44,36 +44,39 @@ class ViewsNumberBadge extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 4),
-        Column(
-          children:  [
-            Text(
-              'ضعف عدد',
-              style: Styles.textStyle14.copyWith(
+        SizedBox(
+          width: 95,
+          child: Column(
+            children:  [
+              Text(
+                'ضعف عدد',
+                style: Styles.textStyle14.copyWith(
+                    fontWeight: FontWeight.bold,
+                ),
+              ),
+              Divider(
+                thickness: 1,
+                color: kPrimaryColor,
+                indent: 15,
+                endIndent: 15,
+                height: 0,
+              ),
+              const SizedBox(height: 4),
+              Text(
+                'المشاهدات',
+                style: Styles.textStyle14.copyWith(
                   fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            Divider(
-              thickness: 1,
-              color: kPrimaryColor,
-              indent: 50,
-              endIndent: 50,
-              height: 0,
-            ),
-            const SizedBox(height: 4),
-            Text(
-              'المشاهدات',
-              style: Styles.textStyle14.copyWith(
-                fontWeight: FontWeight.bold,
+              Divider(
+                thickness: 1,
+                color: kPrimaryColor,
+                indent: 10,
+                endIndent: 10,
+                height: 0,
               ),
-            ),
-            Divider(
-              thickness: 1,
-              color: kPrimaryColor,
-              indent: 45,
-              endIndent: 45,
-              height: 0,
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );
