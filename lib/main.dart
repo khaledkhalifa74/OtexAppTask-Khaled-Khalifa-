@@ -7,6 +7,7 @@ import 'package:otex_app_task/core/utils/app_router.dart';
 import 'package:otex_app_task/core/utils/colors.dart';
 import 'package:otex_app_task/core/utils/simple_bloc_observer.dart';
 import 'package:otex_app_task/features/home/data/database/home_db_service.dart';
+import 'package:otex_app_task/features/plans/data/database/plans_db_service.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +19,7 @@ void main() async{
     systemNavigationBarIconBrightness: Brightness.dark,
   ));
   await HomeDbService().createTables();
-  // await PlansDbService().createTables();
+  await PlansDbService().createTables();
   runApp(const MyApp());
 }
 

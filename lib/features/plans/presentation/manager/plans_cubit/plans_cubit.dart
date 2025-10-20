@@ -36,7 +36,6 @@ class PlansCubit extends Cubit<PlansState> {
                 isPremium: false,
                 numberOfAdValidity: 30,
                 isSelected: false,
-                numberOfViews: 7
               ),
               PlanModel(
                 id: 2,

@@ -18,8 +18,8 @@ class PlanItem extends StatelessWidget {
   final bool? isHealthPin;
   final bool? isPremium;
   final String? flagText;
-  final int numberOfViews;
-  const PlanItem({super.key, required this.planName, required this.checkBoxValue, this.onChanged, required this.planPrice, this.numberOfDaysMoveUp, this.numberOfAdValidity = 0, this.isGlobal, this.isHealthPin, this.isPremium, this.flagText, required this.numberOfViews});
+  final int? numberOfViews;
+  const PlanItem({super.key, required this.planName, required this.checkBoxValue, this.onChanged, required this.planPrice, this.numberOfDaysMoveUp, this.numberOfAdValidity = 0, this.isGlobal, this.isHealthPin, this.isPremium, this.flagText, this.numberOfViews});
 
   @override
   Widget build(BuildContext context) {
@@ -33,60 +33,65 @@ class PlanItem extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 16),
             padding: EdgeInsets.all(16),
             decoration: customPlanItemDecoration(),
-            child: Row(
+            child: Column(
               children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      PlanInfo(
-                          checkBoxValue: checkBoxValue,
-                          onChanged: onChanged,
-                          planName: planName,
-                          planPrice: planPrice,
-                      ),
-                      const Divider(
-                        height: 32,
-                        color: kBorderColor,
-                      ),
-                      // Ad validity
-                      CustomPlanRow(
-                          icon: AssetsData.acuteIcon,
-                          title: 'صلاحية الإعلان $numberOfAdValidity يوم',
-                        size: 18,
-                      ),
-                      // days of move up
-                      if(numberOfDaysMoveUp != null && numberOfDaysMoveUp != 0)
-                      CustomPlanRow(
-                        icon: AssetsData.rocketIcon,
-                        title: 'رفع لأعلى القائمة كل $numberOfDaysMoveUp يوم',
-                        size: 24,
-                      ),
-                      // global
-                      if(isGlobal == true)
-                      CustomPlanRow(
-                        icon: AssetsData.globalIcon,
-                        title: 'ظهور فى كل محافظات مصر',
-                        size: 24,
-                      ),
-                      // premium
-                      if(isPremium == true)
-                      CustomPlanRow(
-                        icon: AssetsData.premiumIcon,
-                        title: 'أعلان مميز',
-                        size: 24,
-                      ),
-                      // health pin
-                      if(isHealthPin == true)
-                      CustomPlanRowWithAddition(
-                        icon: AssetsData.premiumIcon,
-                        title: 'تثبيت فى مقاول صحى',
-                        additionalTitle: '( خلال ال48 ساعة القادمة )',
-                        size: 24,
-                      ),
-                    ],
-                  ),
+                PlanInfo(
+                  checkBoxValue: checkBoxValue,
+                  onChanged: onChanged,
+                  planName: planName,
+                  planPrice: planPrice,
                 ),
-                ViewsNumberBadge(numberOfViews: numberOfViews.toString())
+                const Divider(
+                  height: 32,
+                  color: kBorderColor,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          // Ad validity
+                          CustomPlanRow(
+                              icon: AssetsData.acuteIcon,
+                              title: 'صلاحية الإعلان $numberOfAdValidity يوم',
+                            size: 18,
+                          ),
+                          // days of move up
+                          if(numberOfDaysMoveUp != null && numberOfDaysMoveUp != 0)
+                          CustomPlanRow(
+                            icon: AssetsData.rocketIcon,
+                            title: 'رفع لأعلى القائمة كل $numberOfDaysMoveUp يوم',
+                            size: 24,
+                          ),
+                          // global
+                          if(isGlobal == true)
+                          CustomPlanRow(
+                            icon: AssetsData.globalIcon,
+                            title: 'ظهور فى كل محافظات مصر',
+                            size: 24,
+                          ),
+                          // premium
+                          if(isPremium == true)
+                          CustomPlanRow(
+                            icon: AssetsData.premiumIcon,
+                            title: 'أعلان مميز',
+                            size: 24,
+                          ),
+                          // health pin
+                          if(isHealthPin == true)
+                          CustomPlanRowWithAddition(
+                            icon: AssetsData.premiumIcon,
+                            title: 'تثبيت فى مقاول صحى',
+                            additionalTitle: '( خلال ال48 ساعة القادمة )',
+                            size: 24,
+                          ),
+                        ],
+                      ),
+                    ),
+                    if(numberOfViews != null)
+                    ViewsNumberBadge(numberOfViews: numberOfViews.toString())
+                  ],
+                ),
               ],
             ),
           ),

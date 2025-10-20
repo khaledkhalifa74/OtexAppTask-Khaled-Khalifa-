@@ -8,7 +8,7 @@ class PlanModel {
   int? numberOfDaysMoveUp;
   int? numberOfAdValidity;
   bool isSelected;
-  int numberOfViews;
+  int? numberOfViews;
   String? flagText;
 
   PlanModel({
@@ -21,7 +21,7 @@ class PlanModel {
     this.numberOfDaysMoveUp,
     this.numberOfAdValidity,
     this.isSelected = false,
-    required this.numberOfViews,
+    this.numberOfViews,
     this.flagText,
   });
 
@@ -30,9 +30,9 @@ class PlanModel {
       'id': id,
       'planName' : planName,
       'planPrice' : planPrice,
-      'isHealthPin' : isHealthPin,
-      'isGlobal' : isGlobal,
-      'isPremium' : isPremium,
+      'isHealthPin': (isHealthPin ?? false) ? 1 : 0,
+      'isGlobal': (isGlobal ?? false) ? 1 : 0,
+      'isPremium': (isPremium ?? false) ? 1 : 0,
       'numberOfDaysMoveUp' : numberOfDaysMoveUp,
       'numberOfAdValidity' : numberOfAdValidity,
       'isSelected' : isSelected ? 1 : 0,
@@ -47,9 +47,9 @@ class PlanModel {
       id: map['id'],
       planName: map['planName'],
       planPrice: map['planPrice'],
-      isHealthPin: map['isHealthPin'],
-      isGlobal: map['isGlobal'],
-      isPremium: map['isPremium'],
+      isHealthPin: map['isHealthPin'] == 1,
+      isGlobal: map['isGlobal'] == 1,
+      isPremium: map['isPremium'] == 1,
       numberOfDaysMoveUp: map['numberOfDaysMoveUp'],
       numberOfAdValidity: map['numberOfAdValidity'],
       isSelected: map['isSelected'] == 1,

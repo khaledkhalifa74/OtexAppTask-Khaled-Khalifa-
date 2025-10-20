@@ -13,12 +13,14 @@ class PlansListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: cubit.plans.length,
       padding: const EdgeInsets.symmetric(vertical: 12),
       itemBuilder: (context, index) {
         final plan = cubit.plans[index];
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          padding: const EdgeInsets.only(bottom: 32),
           child: PlanItem(
             isHealthPin: plan.isHealthPin ?? false,
             numberOfDaysMoveUp: plan.numberOfDaysMoveUp ?? 0,
