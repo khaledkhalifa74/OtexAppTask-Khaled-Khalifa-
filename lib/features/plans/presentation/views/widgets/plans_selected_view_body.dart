@@ -5,7 +5,7 @@ import 'package:otex_app_task/features/plans/presentation/manager/plans_cubit/pl
 import 'package:otex_app_task/features/plans/presentation/manager/plans_cubit/plans_state.dart';
 import 'package:otex_app_task/features/plans/presentation/views/widgets/contact_us_item.dart';
 import 'package:otex_app_task/features/plans/presentation/views/widgets/custom_plans_header.dart';
-import 'package:otex_app_task/features/plans/presentation/views/widgets/plan_item.dart';
+import 'package:otex_app_task/features/plans/presentation/views/widgets/plans_list_view.dart';
 
 class PlansSelectedViewBody extends StatefulWidget {
   const PlansSelectedViewBody({super.key});
@@ -30,19 +30,7 @@ class _PlansSelectedViewBodyState extends State<PlansSelectedViewBody> {
             children: [
               const CustomPlansHeader(),
               const SizedBox(height: 32),
-              PlanItem(
-                isHealthPin: true,
-                numberOfDaysMoveUp: 3,
-                numberOfAdValidity: 30,
-                isGlobal: true,
-                isPremium: true,
-                planName: 'بلس',
-                planPrice: '3,000',
-                checkBoxValue: cubit.planCheckBoxValue,
-                onChanged: (newValue){
-                  cubit.updatePlanCheckBox(newValue!);
-                },
-              ),
+              PlansListView(cubit: cubit),
               const ContactUsItem(),
               const Spacer(),
               Container(

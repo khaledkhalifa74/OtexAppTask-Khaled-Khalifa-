@@ -18,7 +18,8 @@ class PlanItem extends StatelessWidget {
   final bool? isHealthPin;
   final bool? isPremium;
   final String? flagText;
-  const PlanItem({super.key, required this.planName, required this.checkBoxValue, this.onChanged, required this.planPrice, this.numberOfDaysMoveUp, this.numberOfAdValidity = 0, this.isGlobal, this.isHealthPin, this.isPremium, this.flagText});
+  final int numberOfViews;
+  const PlanItem({super.key, required this.planName, required this.checkBoxValue, this.onChanged, required this.planPrice, this.numberOfDaysMoveUp, this.numberOfAdValidity = 0, this.isGlobal, this.isHealthPin, this.isPremium, this.flagText, required this.numberOfViews});
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +86,7 @@ class PlanItem extends StatelessWidget {
                     ],
                   ),
                 ),
-                const ViewsNumberBadge(numberOfViews: '24',)
+                ViewsNumberBadge(numberOfViews: numberOfViews.toString())
               ],
             ),
           ),
